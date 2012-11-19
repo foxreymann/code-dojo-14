@@ -38,5 +38,14 @@ function createFibonacciTranslationTable() {
 		$fibonacciTranslationTable[$key] = $sum; 
 	}
 
+	foreach($fibonacciTranslationTable as $key => $value) {
+		if (strpos($key, '11') !== false) {
+			unset($fibonacciTranslationTable[$key]);
+		}
+		if(strlen($key) != 6) {
+			unset($fibonacciTranslationTable[$key]);
+		}
+	}
+	
 	return $fibonacciTranslationTable;
 }

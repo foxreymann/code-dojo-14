@@ -6,7 +6,7 @@ class SumsTest extends PHPUnit_Framework_TestCase
 {
 	public function testCreationOfFibonacciTranslationTable() {
 		$table = createFibonacciTranslationTable();
-        $this->assertEquals(126,count($table));
+        $this->assertEquals(21,count($table));
 	}
 
     public function test1() {
@@ -23,8 +23,7 @@ class SumsTest extends PHPUnit_Framework_TestCase
 		// 100, 11
         $sums = sums(3,SORT_NUMERIC);
 		sort($sums);
-        $this->assertEquals('11',$sums[0]);
-        $this->assertEquals('100',$sums[1]);
+        $this->assertEquals('100',$sums[0]);
     }
 
     public function test4() {
@@ -32,6 +31,13 @@ class SumsTest extends PHPUnit_Framework_TestCase
         $sums = sums(4,SORT_NUMERIC);
 		sort($sums);
         $this->assertEquals('101',$sums[0]);
+    }
+
+    public function test5() {
+		// 1000
+        $sums = sums(5,SORT_NUMERIC);
+		sort($sums);
+        $this->assertEquals('1000',$sums[0]);
     }
 
 	public function testShowingAllResults() {
