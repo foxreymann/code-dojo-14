@@ -4,11 +4,6 @@ require 'Sums.php';
 
 class SumsTest extends PHPUnit_Framework_TestCase
 {
-	public function testCreationOfFibonacciTranslationTable() {
-		$table = createFibonacciTranslationTable();
-        $this->assertEquals(21,count($table));
-	}
-
     public function test1() {
         $sums = sums(1);
         $this->assertEquals('1',$sums[0]);
@@ -39,6 +34,19 @@ class SumsTest extends PHPUnit_Framework_TestCase
 		sort($sums);
         $this->assertEquals('1000',$sums[0]);
     }
+
+    public function test6() {
+		// 1001
+        $sums = sums(6,SORT_NUMERIC);
+		sort($sums);
+        $this->assertEquals('1001',$sums[0]);
+    }
+
+	public function testCreationOfFibonacciTranslationTable() {
+		$table = createFibonacciTranslationTable();
+        $this->assertEquals(21,count($table));
+	}
+
 
 	public function testShowingAllResults() {
 		echo "\n All results \n";
